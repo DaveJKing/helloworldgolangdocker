@@ -7,7 +7,7 @@ WORKDIR /go/src/app
 # Copy the current directory contents into the container at /go/src/app
 COPY . /go/src/app
 
-# create bin file in /go/src/app
+# create bin file in /go/src/app this is using the GOPATH
 RUN go install app
 
 
