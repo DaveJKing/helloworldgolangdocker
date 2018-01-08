@@ -2,18 +2,18 @@
 FROM golang:1.8
 
 # Set the working directory to /app
-WORKDIR /go/src/github.com/djking/hello
+WORKDIR /go/src/app
 
 # Copy the current directory contents into the container at /app
-COPY . /go/src/github.com/djking/hello
+COPY . /go/src/app
 
-# create bin file
-RUN go install github.com/djking/hello
-#RUN ["apt-get", "install", "-y", "vim"]
+# create bin file in /go/src/app
+RUN go install app
+
 
 # Run the executable
-CMD ["/go/bin/hello"]
+CMD ["/go/bin/app"]
 
-# Makes ref to http.ListenAndServe(":8080", nil) in the code
+# Makes ref to http.ListenAndServe(":8080", nil) in the code of main.go
 # Make port 80 available to the world outside this container
 EXPOSE 8080
