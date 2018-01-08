@@ -9,7 +9,7 @@ COPY . /go/src/github.com/djking/hello
 
 # create bin file
 RUN go install github.com/djking/hello
-RUN ["apt-get", "install", "-y", "vim"]
+#RUN ["apt-get", "install", "-y", "vim"]
 
 # Run the executable
 CMD ["/go/bin/hello"]
